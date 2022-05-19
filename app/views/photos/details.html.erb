@@ -21,6 +21,8 @@
     2 months ago
   </dd>
 
+  <% user_id = session.fetch(:user_id) %>
+  <% if user_id == @photo.poster.id %>
   <dt>Edit photo</dt>
   <dd>
     <form action="/update_photo/<%= @photo.id %>">
@@ -33,6 +35,7 @@
       <button>Update photo</button>
     </form>
   </dd>
+  <% end %>
 
   <dt>Delete photo</dt>
   <dd>
